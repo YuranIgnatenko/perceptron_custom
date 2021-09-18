@@ -151,34 +151,6 @@ class MoreOutEquallyInputNetwork():
         print(self.array_inputs_net, len(self.array_inputs_net))
 
 
-    # def learn_all(self, count_iter=10000, func_other=None, flag_save=False):
-    #
-    #     counter_for_predict_from_array = -1
-    #
-    #     for net in self.array_inputs_net:
-    #         print(net)
-    #         print("\n" * 20 + str(counter_for_predict_from_array))
-    #         counter_for_predict_from_array += 1
-    #         # МЕТОД ОБРАТНОГО РАСПРОСТРАНЕНИЯ
-    #         net.count_learn += 1
-    #         training_inputs = net.data_train
-    #         for i in range(count_iter):
-    #             # МЕТОД ОБРАТНОГО РАСПРОСТРАНЕНИЯ
-    #             input_layer = training_inputs
-    #             outputs = net.sigmoid(np.dot(input_layer, np.array(net.synaptic_weights)))
-    #             err = net.data_predict[counter_for_predict_from_array] - outputs
-    #             adjustments = np.dot(input_layer.T, err * (outputs * (1 - outputs)))
-    #             # print('syn w learn:  \n', self.synaptic_weights, type(self.synaptic_weights))
-    #             net.synaptic_weights = np.array(net.synaptic_weights) + adjustments
-    #             if func_other != None:
-    #                 func_other()
-    #         if flag_save:
-    #             f = open('Synaptics.txt', 'w')
-    #
-    #             for syns in net.synaptic_weights:
-    #                 # print(syns)
-    #                 f.write(str(syns[0]) + ' ')
-
     def learner(self, data_train, data_pred, count_iter=20000, func_other=None, flag_save=False):
         counter_pred_ar = 0
         for ar in data_train:
@@ -222,34 +194,6 @@ class MoreOutNotEquallyInputNetwork():
         # print(self.array_inputs_net, len(self.array_inputs_net))
 
 
-    # def learn_all(self, count_iter=10000, func_other=None, flag_save=False):
-    #
-    #     counter_for_predict_from_array = -1
-    #
-    #     for net in self.array_inputs_net:
-    #         print(net)
-    #         print("\n" * 20 + str(counter_for_predict_from_array))
-    #         counter_for_predict_from_array += 1
-    #         # МЕТОД ОБРАТНОГО РАСПРОСТРАНЕНИЯ
-    #         net.count_learn += 1
-    #         training_inputs = net.data_train
-    #         for i in range(count_iter):
-    #             # МЕТОД ОБРАТНОГО РАСПРОСТРАНЕНИЯ
-    #             input_layer = training_inputs
-    #             outputs = net.sigmoid(np.dot(input_layer, np.array(net.synaptic_weights)))
-    #             err = net.data_predict[counter_for_predict_from_array] - outputs
-    #             adjustments = np.dot(input_layer.T, err * (outputs * (1 - outputs)))
-    #             # print('syn w learn:  \n', self.synaptic_weights, type(self.synaptic_weights))
-    #             net.synaptic_weights = np.array(net.synaptic_weights) + adjustments
-    #             if func_other != None:
-    #                 func_other()
-    #         if flag_save:
-    #             f = open('Synaptics.txt', 'w')
-    #
-    #             for syns in net.synaptic_weights:
-    #                 # print(syns)
-    #                 f.write(str(syns[0]) + ' ')
-
     def learner(self, data_train, data_pred, count_iter=20000, func_other=None, flag_save=False):
         counter_pred_ar = 0
         for ar in data_train:
@@ -270,22 +214,6 @@ class MoreOutNotEquallyInputNetwork():
         return self.ar_res
 
 
-
-
-# class MoreOutNet2():
-#     def __init__(self, count_input_net, array_data_train, array_data_predicts, flag_upload_synaptics=False,
-#                      flag_seed=True,
-#                      num_seed=1):
-#         self.array_inputs_net = []
-#         self.ar_res = []
-#         counter_pred_ar = 0
-#         for i in range(count_input_net):
-#             net = Network(array_data_train[0], array_data_predicts[0][counter_pred_ar], flag_upload_synaptics, flag_seed,
-#                           num_seed,
-#                           name_net=f'Net_{i}')
-#             counter_pred_ar += 1
-#             self.array_inputs_net.append(net)
-#             print(self.array_inputs_net)
 
 
 if __name__ == '__main__':
